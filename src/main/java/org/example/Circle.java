@@ -48,11 +48,11 @@ public class Circle extends GeometricObject {
     // Переопределение метода toString
     @Override
     public String toString() {
-        return "Circle{" +
-                "radius=" + radius +
-                ", color='" + getColor() + '\'' +
-                ", filled=" + isFilled() +
-                ", dateCreated=" + getDateCreated() +
+        return "Круг{" +
+                "радиус=" + radius +
+                ", цвет='" + getColor() + '\'' +
+                ", заливка=" + isFilled() +
+                ", датаСоздания=" + getDateCreated() +
                 '}';
     }
 }

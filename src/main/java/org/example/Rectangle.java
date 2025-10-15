@@ -54,12 +54,12 @@ public class Rectangle extends GeometricObject {
     // Переопределение метода toString
     @Override
     public String toString() {
-        return "Rectangle{" +
-                "width=" + width +
-                ", height=" + height +
-                ", color='" + getColor() + '\'' +
-                ", filled=" + isFilled() +
-                ", dateCreated=" + getDateCreated() +
+        return "Прямоугольник{" +
+                "ширина=" + width +
+                ", высота=" + height +
+                ", цвет='" + getColor() + '\'' +
+                ", заливка=" + isFilled() +
+                ", датаСоздания=" + getDateCreated() +
                 '}';
     }
 }

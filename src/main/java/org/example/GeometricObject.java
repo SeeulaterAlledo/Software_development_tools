@@ -45,10 +45,10 @@ public class GeometricObject {
     // Метод toString
     @Override
     public String toString() {
-        return "GeometricObject{" +
-                "color='" + color + '\'' +
-                ", filled=" + filled +
-                ", dateCreated=" + dateCreated +
+        return "ГеометрическийОбъект{" +
+                "цвет='" + color + '\'' +
+                ", заливка=" + filled +
+                ", датаСоздания=" + dateCreated +
                 '}';
     }
 }
