@@ -1,18 +1,43 @@
 package org.example;
-
-public class Rectangle {
+public class Rectangle extends GeometricObject {
     private double width;
     private double height;
 
-    // Безаргументный конструктор
+    // Конструктор по умолчанию
     public Rectangle() {
-        this.width = -1;
-        this.height = -1;
+        super();
+        this.width = 1.0;
+        this.height = 1.0;
     }
 
-    // Конструктор с параметрами
+    // Конструктор с шириной и высотой
     public Rectangle(double width, double height) {
+        super();
         this.width = width;
+        this.height = height;
+    }
+
+    // Конструктор с полными параметрами
+    public Rectangle(double width, double height, String color, boolean filled) {
+        super(color, filled);
+        this.width = width;
+        this.height = height;
+    }
+
+    // Геттеры и сеттеры
+    public double getWidth() {
+        return width;
+    }
+
+    public void setWidth(double width) {
+        this.width = width;
+    }
+
+    public double getHeight() {
+        return height;
+    }
+
+    public void setHeight(double height) {
         this.height = height;
     }
 
@@ -26,12 +51,15 @@ public class Rectangle {
         return 2 * (width + height);
     }
 
-    // Геттеры (дополнительно, для лучшей практики)
-    public double getWidth() {
-        return width;
-    }
-
-    public double getHeight() {
-        return height;
+    // Переопределение метода toString
+    @Override
+    public String toString() {
+        return "Прямоугольник{" +
+                "ширина=" + width +
+                ", высота=" + height +
+                ", цвет='" + getColor() + '\'' +
+                ", заливка=" + isFilled() +
+                ", датаСоздания=" + getDateCreated() +
+                '}';
     }
 }
