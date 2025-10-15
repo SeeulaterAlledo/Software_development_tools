@@ -1,26 +1,37 @@
 package org.example;
-
 public class Main {
     public static void main(String[] args) {
-        // Создание первого прямоугольника
-        Rectangle rect1 = new Rectangle(4, 40);
+        // Создание объектов Circle
+        Circle circle1 = new Circle(5.0, "red", true);
+        Circle circle2 = new Circle(3.5);
 
-        // Создание второго прямоугольника
+        // Создание объектов Rectangle
+        Rectangle rect1 = new Rectangle(4.0, 40.0, "blue", false);
         Rectangle rect2 = new Rectangle(3.5, 35.9);
 
-        // Вывод информации о первом прямоугольнике
-        System.out.println("Прямоугольник 1:");
-        System.out.println("Ширина: " + rect1.getWidth());
-        System.out.println("Высота: " + rect1.getHeight());
-        System.out.println("Площадь: " + rect1.getArea());
-        System.out.println("Периметр: " + rect1.getPerimeter());
-        System.out.println();
+        // Вывод информации о кругах
+        System.out.println("=== Circle Objects ===");
+        printShapeInfo(circle1);
+        printShapeInfo(circle2);
 
-        // Вывод информации о втором прямоугольнике
-        System.out.println("Прямоугольник 2:");
-        System.out.println("Ширина: " + rect2.getWidth());
-        System.out.println("Высота: " + rect2.getHeight());
-        System.out.println("Площадь: " + rect2.getArea());
-        System.out.println("Периметр: " + rect2.getPerimeter());
+        // Вывод информации о прямоугольниках
+        System.out.println("\n=== Rectangle Objects ===");
+        printShapeInfo(rect1);
+        printShapeInfo(rect2);
+    }
+
+    public static void printShapeInfo(GeometricObject shape) {
+        System.out.println(shape.toString());
+
+        if (shape instanceof Circle) {
+            Circle circle = (Circle) shape;
+            System.out.printf("Area: %.2f, Perimeter: %.2f, Diameter: %.2f\n",
+                    circle.getArea(), circle.getPerimeter(), circle.getDiameter());
+        } else if (shape instanceof Rectangle) {
+            Rectangle rect = (Rectangle) shape;
+            System.out.printf("Area: %.2f, Perimeter: %.2f\n",
+                    rect.getArea(), rect.getPerimeter());
+        }
+        System.out.println();
     }
 }
